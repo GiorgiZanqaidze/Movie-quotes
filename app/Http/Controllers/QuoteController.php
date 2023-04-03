@@ -10,4 +10,6 @@ class QuoteController extends Controller
     {
         return view('quote', ['quote' => 'quote name']);
     }
+
+
 }

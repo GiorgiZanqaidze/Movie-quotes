@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [QuoteController::class, 'index']);
+Route::get('/quotes/quote', [MovieController::class, 'quote']);
