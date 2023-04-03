@@ -16,4 +16,5 @@ use App\Http\Controllers\MovieController;
 */
 
 Route::get('/', [QuoteController::class, 'index']);
+
 Route::get('/quotes/quote', [MovieController::class, 'show']);
