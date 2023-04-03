@@ -8,6 +8,6 @@ class QuoteController extends Controller
 {
     public function index()
     {
-        return view('welcome', ['quote' => 'quote name']);
+        return view('quote', ['quote' => 'quote name']);
     }
 }

@@ -18,7 +18,7 @@
                     Some quick example text to build on the card title and make up the
                     bulk of the card's content.
                 </p>
-                <a href="#" >movie name</a>
+                    <a href="/quotes/quote">movie name</a>
                 </div>
             </div>
         </div>
