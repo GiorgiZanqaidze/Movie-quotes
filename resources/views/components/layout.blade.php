@@ -15,6 +15,14 @@
 
 </style>
 
-<body>
-    {{$slot}}
+<body class="bg-gray-500">
+    <div class="flex">
+        <aside class="flex flex-col justify-center gap-2 m-4">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">En</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">KA</button>
+        </aside>
+        <div>
+            {{$slot}}
+        </div>
+    </div>
 </body>

@@ -1,4 +1,3 @@
 <x-layout>
-
-test
+    test
 </x-layout>
