@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class QuoteController extends Controller
 {
-    public function index()
-    {
-        return view('quote', ['quote' => 'quote name']);
-    }
-
-
+	public function index()
+	{
+		return view('quote', ['quote' => 'quote name']);
+	}
 }
