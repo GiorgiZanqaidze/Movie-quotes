@@ -6,6 +6,6 @@ class MovieController extends Controller
 {
 	public function show()
 	{
-		return view('movie');
+		return view('movie', ['quote' => 'movie name']);
 	}
 }
