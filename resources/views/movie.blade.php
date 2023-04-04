@@ -1,7 +1,9 @@
 <x-layout>
     <div class="">
-        <p class="mb-4 text-center block text-3xl text-white">{{$movie}}</p>
+        <p class="mb-4 text-center block text-3xl text-white">{{$movie->title}}</p>
         <div class="grid gap-4 grid-cols-1">
+        @if ($movie->quotes)
+            @foreach ($movie->quotes as $quote)
             <div class="flex  items-center justify-center flex-col mt-10 mb-10">
                 <div class="block max-w-sm rounded-lg text-white dark:bg-neutral-700 text-black bg-white" >
                     <img class="rounded-t-lg shadow-lg"
@@ -9,29 +11,11 @@
                         alt="" />
                     <div class="p-6">
                 </div>
-                <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200 text-3xl text-black">Some quick example text to build on the card title and.
-                </p>
+                <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200 text-3xl text-black">{{$quote->name}}</p>
             </div>
-            <div class="flex  items-center justify-center flex-col mt-10 mb-10">
-                <div class="block max-w-sm rounded-lg text-white dark:bg-neutral-700 text-black bg-white" >
-                    <img class="rounded-t-lg shadow-lg"
-                        src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg"
-                        alt="" />
-                    <div class="p-6">
-                </div>
-                <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200 text-3xl text-black">Some quick example text to build on the card title and.
-                </p>
-            </div>
-            <div class="flex  items-center justify-center flex-col mt-10 mb-10">
-                <div class="block max-w-sm rounded-lg text-white dark:bg-neutral-700 text-black bg-white" >
-                    <img class="rounded-t-lg shadow-lg"
-                        src="https://tecdn.b-cdn.net/img/new/standard/nature/184.jpg"
-                        alt="" />
-                    <div class="p-6">
-                </div>
-                <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200 text-3xl text-black">Some quick example text to build on the card title and.
-                </p>
-            </div>
+            @endforeach
+                
+        @endif 
         </div>
     </div>
 </x-layout>

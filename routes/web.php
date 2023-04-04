@@ -6,8 +6,7 @@ use App\Http\Controllers\MovieController;
 use App\Http\Controllers\UserController;
 
 Route::get('/', [QuoteController::class, 'index']);
-
-Route::get('/quotes/quote', [MovieController::class, 'show']);
+Route::get('/movies/{movie:slug}', [MovieController::class, 'show']);
 
 Route::get('login', [UserController::class, 'create']);
 Route::post('login', [UserController::class, 'store']);
