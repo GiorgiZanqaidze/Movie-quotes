@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Movie;
+
 class QuoteController extends Controller
 {
 	public function index()
 	{
-		return view('quote', ['quote' => 'quote name']);
+		$randomMovie = Movie::inRandomOrder()->first();
+		return view('quote', [
+			'movie' => $randomMovie,
+		]);
 	}
 }
