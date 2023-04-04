@@ -26,14 +26,15 @@
                 @csrf
                 <button class="underline underline-offset-1 text-center block text-3xl text-white">LogOut<button>
             </form>
+                <a href="/movies/movie/create" class="underline underline-offset-1 text-center block text-3xl text-white">Create Movie</a>
+                <a href="/dashboard" class="underline underline-offset-1 text-center block text-3xl text-white">Dashboard</a>
                 @else
                 <a href="/login" class="underline underline-offset-1 text-center block text-3xl text-white">Login</a>
             @endauth
-            <a href="/movies/movie/create" class="underline underline-offset-1 text-center block text-3xl text-white">Dashboard</a>
             <br>
             <a href="/" class="underline underline-offset-1 text-center block text-3xl text-white">Main Page</a>
         </aside>
-        <main>
+        <main class="w-full flex justify-center items-center min-h-screen">
             {{$slot}}
         </main>
     </div>

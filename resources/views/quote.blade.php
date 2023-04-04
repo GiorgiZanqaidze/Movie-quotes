@@ -5,8 +5,8 @@
                 src="{{asset('storage/' . $movie->thumbnail)}}"
                 alt="" />
             <div class="p-6">
-        </div>
-        <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200 text-3xl">{{$movie->quotes->first()->name}}</p>
+        <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200 text-3xl text-white">{{$movie->quotes->first()->name}}</p>
         <a href="/movies/{{$movie->slug}}" class="underline underline-offset-1 text-center block text-3xl">{{$movie->title}}</a>
+        </div>
     </div>
 </x-layout>
