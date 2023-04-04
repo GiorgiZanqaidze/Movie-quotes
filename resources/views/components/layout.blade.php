@@ -20,7 +20,14 @@
         <aside class="flex flex-col justify-center gap-2 m-4 fixed left-0" style="top: 50%; transform: translateY(-50%)">
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">En</button>
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">KA</button>
-            <a href="/login" class="underline underline-offset-1 text-center block text-3xl text-white">Login</a>
+            @auth
+                <form action="/logout" method="POST">
+                @csrf
+                <button class="underline underline-offset-1 text-center block text-3xl text-white">LogOut<button>
+            </form>
+                @else
+                <a href="/login" class="underline underline-offset-1 text-center block text-3xl text-white">Login</a>
+            @endauth
             <a href="/" class="underline underline-offset-1 text-center block text-3xl text-white">Main Page</a>
         </aside>
         <main>

@@ -8,6 +8,6 @@ class QuoteController extends Controller
 {
 	public function index()
 	{
-		return view('quote', ['quote' => Movie::all()->first()->name]);
+		return view('quote', ['quote' => Movie::all()->first()->title]);
 	}
 }

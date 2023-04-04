@@ -19,10 +19,16 @@ class DatabaseSeeder extends Seeder
 		//     'email' => 'test@example.com',
 		// ]);
 
-		\App\Models\Movie::factory(10)->create();
-
-		\App\Models\Quote::factory(5)->create([
-			'movie_id' => 1,
+		\App\Models\User::factory()->create([
+			'name'     => 'gio',
+			'email'    => 'gio@gmail.com',
+			'password' => bcrypt('gio123123'),
 		]);
+
+		// \App\Models\Movie::factory(10)->create();
+
+		// \App\Models\Quote::factory(5)->create([
+		// 	'movie_id' => 1,
+		// ]);
 	}
 }
