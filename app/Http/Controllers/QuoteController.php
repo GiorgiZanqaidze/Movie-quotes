@@ -8,6 +8,9 @@ class QuoteController extends Controller
 {
 	public function index()
 	{
-		return view('quote', ['movie' => Movie::all()->first()]);
+		$randomMovie = Movie::inRandomOrder()->first();
+		return view('quote', [
+			'movie' => $randomMovie,
+		]);
 	}
 }

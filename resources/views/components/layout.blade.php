@@ -1,7 +1,8 @@
 <!doctype html>
 
 <title>Movie Quotes</title>
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+{{-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
+@vite('resources/css/app.css')
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -28,6 +29,8 @@
                 @else
                 <a href="/login" class="underline underline-offset-1 text-center block text-3xl text-white">Login</a>
             @endauth
+            <a href="/movies/movie/create" class="underline underline-offset-1 text-center block text-3xl text-white">Dashboard</a>
+            <br>
             <a href="/" class="underline underline-offset-1 text-center block text-3xl text-white">Main Page</a>
         </aside>
         <main>

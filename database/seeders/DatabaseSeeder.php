@@ -25,10 +25,10 @@ class DatabaseSeeder extends Seeder
 			'password' => bcrypt('gio123123'),
 		]);
 
-		// \App\Models\Movie::factory(10)->create();
+		\App\Models\Movie::factory(10)->create();
 
-		// \App\Models\Quote::factory(5)->create([
-		// 	'movie_id' => 1,
-		// ]);
+		\App\Models\Quote::factory(5)->create([
+			'movie_id' => 1,
+		]);
 	}
 }
