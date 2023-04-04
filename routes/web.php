@@ -3,6 +3,7 @@
 use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,5 @@ use App\Http\Controllers\MovieController;
 Route::get('/', [QuoteController::class, 'index']);
 
 Route::get('/quotes/quote', [MovieController::class, 'show']);
+
+Route::get('login', [UserController::class, 'show']);

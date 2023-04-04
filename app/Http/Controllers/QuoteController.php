@@ -6,6 +6,6 @@ class QuoteController extends Controller
 {
 	public function index()
 	{
-		return view('quote', ['quote' => 'quote name']);
+		return view('quote', ['quote' => 'movie name']);
 	}
 }
