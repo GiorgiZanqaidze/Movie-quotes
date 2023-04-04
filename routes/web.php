@@ -20,4 +20,5 @@ Route::get('/', [QuoteController::class, 'index']);
 
 Route::get('/quotes/quote', [MovieController::class, 'show']);
 
-Route::get('login', [UserController::class, 'show']);
+Route::get('login', [UserController::class, 'create']);
+Route::post('login', [UserController::class, 'store']);
