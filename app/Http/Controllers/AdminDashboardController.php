@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use App\Models\Quote;
 
 class AdminDashboardController extends Controller
 {
 	public function show()
 	{
-		return view('dashboard-movies', ['movies' => Movie::all()]);
+		return view('dashboard-movies', [
+			'movies' => Movie::all(),
+			'quotes' => Quote::all(),
+		]);
 	}
 
 	public function destroy(Movie $movie)
@@ -17,13 +21,14 @@ class AdminDashboardController extends Controller
 		return redirect('/');
 	}
 
-	public function edit()
+	public function edit(Movie $movie)
 	{
-		return view('dashboard-movies', ['movies' => Movie::all()]);
+		return view('edit-movie', ['movie' => $movie]);
 	}
 
-	public function update()
+	public function update(Movie $movie)
 	{
+		dd(request()->all());
 		$attributes = request()->validate([
 			'title'      => 'required|min:3',
 			'slug'       => 'required',
@@ -31,7 +36,7 @@ class AdminDashboardController extends Controller
 		]);
 		$attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnail');
 
-		Movie::create($attributes);
+		$movie->update($attributes);
 
 		return redirect('/');
 	}

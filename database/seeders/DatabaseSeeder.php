@@ -30,5 +30,9 @@ class DatabaseSeeder extends Seeder
 		\App\Models\Quote::factory(5)->create([
 			'movie_id' => 1,
 		]);
+
+		\App\Models\Quote::factory(5)->create([
+			'movie_id' => 2,
+		]);
 	}
 }

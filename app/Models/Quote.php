@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quote extends Model
 {
-	protected $fillable = ['name', 'movie_id'];
+	protected $fillable = ['name', 'movie_id', 'slug'];
 
 	// protected $guarded = [];
 
