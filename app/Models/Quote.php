@@ -9,8 +9,6 @@ class Quote extends Model
 {
 	protected $fillable = ['name', 'movie_id', 'slug'];
 
-	// protected $guarded = [];
-
 	use HasFactory;
 
 	public function movie()
