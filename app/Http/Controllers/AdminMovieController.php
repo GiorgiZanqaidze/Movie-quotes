@@ -14,23 +14,10 @@ class AdminMovieController extends Controller
 
 	public function create(StoreMovieRequest $request)
 	{
-		// $attributes = request()->validate([
-		// 	'title'      => 'required|min:3',
-		// 	'slug'       => 'required',
-		// 	'thumbnail'  => 'required|image',
-		// ]);
-		// $request['thumbnail'] = request()->file('thumbnail')->store('thumbnail');
 		$validated = $request->validated();
 
-		// Movie::create($request);
 		Movie::create($validated);
 
-		return redirect('/');
-	}
-
-	public function destroy(Movie $movie)
-	{
-		$movie->delete();
 		return redirect('/');
 	}
 
@@ -39,16 +26,17 @@ class AdminMovieController extends Controller
 		return view('edit-movie', ['movie' => $movie]);
 	}
 
-	public function update(Movie $movie)
+	public function destroy(Movie $movie)
 	{
-		$attributes = request()->validate([
-			'title'      => 'required|min:3',
-			'slug'       => 'required',
-			'thumbnail'  => 'required|image',
-		]);
-		$attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnail');
+		$movie->delete();
+		return redirect('/');
+	}
 
-		$movie->update($attributes);
+	public function update(Movie $movie, StoreMovieRequest $request)
+	{
+		$validated = $request->validated();
+
+		$movie->update($validated);
 
 		return redirect('/');
 	}

@@ -6,7 +6,7 @@
                     <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                         Add Movie Quote
                     </h1>
-                    <form class="space-y-4 md:space-y-6" method="POST" action="/quotes/quote/create">
+                    <form class="space-y-4 md:space-y-6" method="POST" action="/quotes/quote/create" enctype="multipart/form-data">
                             @csrf
                         <div>
                             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Quote name</label>
@@ -22,12 +22,18 @@
                                 <span class="text-xs text-red-500">{{$message}}</span>
                             @enderror
                         </div>
+                        <div class="mb-6">
+                            <label for="thumbnail" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Quote Image</label>
+                            <input type="file" id="thumbnail" name="thumbnail" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                            @error('thumbnail')
+                                <span class="text-xs text-red-500">{{$message}}</span>
+                            @enderror
+                        </div>
                         <select name="movie_id" id="movie_id">
 
                             @foreach ($movies as $movie)
                                 <option 
                                 value="{{$movie->id}}" 
-                                {{old('movie_id') == $movie->id ? 'selected' : ''}}
                                 >
                                     {{ucwords($movie->title)}}
                                 </option>  
