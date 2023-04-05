@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quote extends Model
 {
-	protected $fillable = ['name'];
+	protected $fillable = ['name', 'movie_id'];
 
-	protected $guarded = [];
+	// protected $guarded = [];
 
 	use HasFactory;
 
