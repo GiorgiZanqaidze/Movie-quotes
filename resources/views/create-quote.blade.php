@@ -34,7 +34,6 @@
                             @foreach ($movies as $movie)
                                 <option 
                                 value="{{$movie->id}}" 
-                                {{old('movie_id') == $movie->id ? 'selected' : ''}}
                                 >
                                     {{ucwords($movie->title)}}
                                 </option>  
