@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FormRequest\StoreMovieRequest;
 use App\Models\Movie;
 
 class AdminMovieController extends Controller
@@ -11,16 +12,18 @@ class AdminMovieController extends Controller
 		return view('create-movie');
 	}
 
-	public function create()
+	public function create(StoreMovieRequest $request)
 	{
-		$attributes = request()->validate([
-			'title'      => 'required|min:3',
-			'slug'       => 'required',
-			'thumbnail'  => 'required|image',
-		]);
-		$attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnail');
+		// $attributes = request()->validate([
+		// 	'title'      => 'required|min:3',
+		// 	'slug'       => 'required',
+		// 	'thumbnail'  => 'required|image',
+		// ]);
+		// $request['thumbnail'] = request()->file('thumbnail')->store('thumbnail');
+		$validated = $request->validated();
 
-		Movie::create($attributes);
+		// Movie::create($request);
+		Movie::create($validated);
 
 		return redirect('/');
 	}
