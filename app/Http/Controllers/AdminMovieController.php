@@ -19,7 +19,6 @@ class AdminMovieController extends Controller
 		// 	'slug'       => 'required',
 		// 	'thumbnail'  => 'required|image',
 		// ]);
-		$request['thumbnail'] = request()->file('thumbnail')->store('thumbnail');
 		$validated = $request->validated();
 
 		// Movie::create($request);

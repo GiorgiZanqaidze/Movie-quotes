@@ -18,7 +18,10 @@ class AdminQuoteController extends Controller
 			'name'           => 'required|min:5',
 			'movie_id'       => 'required',
 			'slug'           => 'required',
+			'thumbnail'      => 'required|image',
 		]);
+
+		$attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnail');
 
 		Quote::create($attributes);
 
@@ -45,7 +48,10 @@ class AdminQuoteController extends Controller
 			'name'           => 'required|min:5',
 			'movie_id'       => 'required',
 			'slug'           => 'required',
+			'thumbnail'      => 'required|image',
 		]);
+
+		$attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnail');
 
 		$quote->update($attributes);
 
