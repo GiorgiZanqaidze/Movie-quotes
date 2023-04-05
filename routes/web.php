@@ -15,7 +15,9 @@ Route::get('login', [UserController::class, 'create'])->middleware('guest');
 Route::post('login', [UserController::class, 'store'])->middleware('guest');
 Route::post('logout', [UserController::class, 'destroy'])->middleware('auth');
 
-Route::get('dashboard/movies', [AdminDashboardController::class, 'show'])->middleware('auth');
+Route::get('dashboard', [AdminDashboardController::class, 'show'])->middleware('auth');
+Route::get('dashboard/movies', [AdminDashboardController::class, 'showMovies'])->middleware('auth');
+Route::get('dashboard/quotes', [AdminDashboardController::class, 'showQuotes'])->middleware('auth');
 
 Route::get('movies/movie/create', [AdminMovieController::class, 'index'])->middleware('auth');
 Route::post('movies/movie/create', [AdminMovieController::class, 'create'])->middleware('auth');

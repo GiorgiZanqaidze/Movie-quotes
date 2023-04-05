@@ -29,7 +29,7 @@ class AdminMovieController extends Controller
 	public function destroy(Movie $movie)
 	{
 		$movie->delete();
-		return redirect('/');
+		return redirect('/dashboard/movies');
 	}
 
 	public function update(Movie $movie, StoreMovieRequest $request)
