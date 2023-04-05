@@ -13,6 +13,7 @@ return new class extends Migration {
 		Schema::create('quotes', function (Blueprint $table) {
 			$table->string('name');
 			$table->string('slug');
+			$table->string('thumbnail')->nullable();
 			$table->foreignId('movie_id')->cascadeOnDelete();
 			$table->id();
 			$table->timestamps();
