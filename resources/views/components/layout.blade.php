@@ -28,7 +28,7 @@
             </form>
                 <a href="/movies/movie/create" class="underline underline-offset-1 text-center block text-3xl text-white">Create Movie</a>
                 <a href="/quotes/quote/create" class="underline underline-offset-1 text-center block text-3xl text-white">Create Quote</a>
-                <a href="/dashboard" class="underline underline-offset-1 text-center block text-3xl text-white">Dashboard</a>
+                <a href="/dashboard/movies" class="underline underline-offset-1 text-center block text-3xl text-white">Dashboard</a>
                 @else
                 <a href="/login" class="underline underline-offset-1 text-center block text-3xl text-white">Login</a>
             @endauth
