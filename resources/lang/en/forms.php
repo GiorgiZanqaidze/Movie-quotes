@@ -15,4 +15,8 @@ return [
 	'edit'             => 'Edit',
 	'edit_quote'       => 'Edit Quote',
 	'edit_movie'       => 'Edit Movie',
+	'add'              => 'Add',
+	'sign_in'          => 'Sign In',
+	'your_email'       => 'Your Email',
+	'your_password'    => 'Your Password',
 ];

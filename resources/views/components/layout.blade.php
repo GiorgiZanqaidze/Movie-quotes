@@ -24,7 +24,7 @@
                         <a class="hover:bg-white hover:text-black text-white font-bold py-2 px-4 border-white border-2 bg-transparent rounded rounded-full" href="{{ route('lang.switch', $lang) }}">{{$language}}</a>
                 @endif
                 @if ($lang === App::getLocale())
-                        <a class="hover:bg-white hover:text-black text-white font-bold py-2 px-4 border-white border-2 bg-transparent rounded rounded-full" href="{{ route('lang.switch', $lang) }}"> {{$language}}</a>
+                        <a class="hover:bg-white hover:text-black text-black font-bold py-2 px-4 border-white border-2 bg-transparent rounded rounded-full bg-white" href="{{ route('lang.switch', $lang) }}"> {{$language}}</a>
                 @endif
             @endforeach
             @auth
