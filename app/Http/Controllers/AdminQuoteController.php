@@ -15,9 +15,9 @@ class AdminQuoteController extends Controller
 	public function store()
 	{
 		$attributes = request()->validate([
-			'name'           => 'required|min:5',
+			'name'           => 'required|min:5|max:255',
 			'movie_id'       => 'required',
-			'slug'           => 'required',
+			'slug'           => 'required|min:10|max:255',
 			'thumbnail'      => 'required|image',
 		]);
 
@@ -45,9 +45,9 @@ class AdminQuoteController extends Controller
 	public function update(Quote $quote)
 	{
 		$attributes = request()->validate([
-			'name'           => 'required|min:5',
+			'name'           => 'required|min:5|max:255',
 			'movie_id'       => 'required',
-			'slug'           => 'required',
+			'slug'           => 'required|min:10|max:255',
 			'thumbnail'      => 'required|image',
 		]);
 
