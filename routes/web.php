@@ -30,3 +30,6 @@ Route::post('quotes/quote/create', [AdminQuoteController::class, 'store'])->midd
 Route::delete('quotes/quote/{quote:slug}/delete', [AdminQuoteController::class, 'destroy'])->middleware('auth');
 Route::get('quotes/quote/{quote:slug}/edit', [AdminQuoteController::class, 'edit'])->middleware('auth');
 Route::patch('quotes/quote/{quote:slug}/edit', [AdminQuoteController::class, 'update'])->middleware('auth');
+
+// languages controller
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
