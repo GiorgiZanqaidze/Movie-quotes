@@ -18,17 +18,15 @@
 
 <body class="bg-gray-500 relative">
     <div class="flex justify-center">
-        <aside class="flex flex-col justify-center gap-2 m-4 fixed left-0" style="top: 50%; transform: translateY(-50%)">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">En</button>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">KA</button>
+        <aside class="flex flex-col justify-center items-center gap-2 m-4 fixed left-0" style="top: 50%; transform: translateY(-50%)">
+            <button class="hover:bg-white hover:text-black text-white font-bold py-2 px-4 border-white border-2 bg-transparent rounded rounded-full p-5">En</button>
+            <button class="hover:bg-white hover:text-black text-white font-bold py-2 px-4 border-white border-2 bg-transparent rounded rounded-full">KA</button>
             @auth
                 <form action="/logout" method="POST">
                 @csrf
                 <button class="underline underline-offset-1 text-center block text-3xl text-white">LogOut<button>
             </form>
-                <a href="/movies/movie/create" class="underline underline-offset-1 text-center block text-3xl text-white">Create Movie</a>
-                <a href="/quotes/quote/create" class="underline underline-offset-1 text-center block text-3xl text-white">Create Quote</a>
-                <a href="/dashboard/movies" class="underline underline-offset-1 text-center block text-3xl text-white">Dashboard</a>
+                <a href="/dashboard" class="underline underline-offset-1 text-center block text-3xl text-white">Dashboard</a>
                 @else
                 <a href="/login" class="underline underline-offset-1 text-center block text-3xl text-white">Login</a>
             @endauth

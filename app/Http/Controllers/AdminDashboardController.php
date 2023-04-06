@@ -9,9 +9,16 @@ class AdminDashboardController extends Controller
 {
 	public function show()
 	{
-		return view('dashboard-movies', [
-			'movies' => Movie::all(),
-			'quotes' => Quote::all(),
-		]);
+		return view('dashboard');
+	}
+
+	public function showMovies()
+	{
+		return view('movies-dashboard', ['movies' => Movie::all()]);
+	}
+
+	public function showQuotes()
+	{
+		return view('quotes-dashboard', ['quotes' => Quote::all()]);
 	}
 }

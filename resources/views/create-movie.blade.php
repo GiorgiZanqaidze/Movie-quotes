@@ -29,11 +29,4 @@
             </div>
         </div>
     </section>
-
-
-    
-
-
-
-
 </x-layout>
