@@ -19,19 +19,25 @@
 <body class="bg-gray-500 relative">
     <div class="flex justify-center">
         <aside class="flex flex-col justify-center items-center gap-2 m-4 fixed left-0" style="top: 50%; transform: translateY(-50%)">
-            <button class="hover:bg-white hover:text-black text-white font-bold py-2 px-4 border-white border-2 bg-transparent rounded rounded-full p-5">En</button>
-            <button class="hover:bg-white hover:text-black text-white font-bold py-2 px-4 border-white border-2 bg-transparent rounded rounded-full">KA</button>
+            @foreach (Config::get('languages') as $lang => $language)
+                @if ($lang != App::getLocale())
+                        <a class="hover:bg-white hover:text-black text-white font-bold py-2 px-4 border-white border-2 bg-transparent rounded rounded-full" href="{{ route('lang.switch', $lang) }}">{{$language}}</a>
+                @endif
+                @if ($lang === App::getLocale())
+                        <a class="hover:bg-white hover:text-black text-black font-bold py-2 px-4 border-white border-2 bg-transparent rounded rounded-full bg-white" href="{{ route('lang.switch', $lang) }}"> {{$language}}</a>
+                @endif
+            @endforeach
             @auth
                 <form action="/logout" method="POST">
                 @csrf
-                <button class="underline underline-offset-1 text-center block text-3xl text-white">LogOut<button>
+                <button class="underline underline-offset-1 text-center block text-3xl text-white">{{__('navigate-text.logout')}}<button>
             </form>
-                <a href="/dashboard" class="underline underline-offset-1 text-center block text-3xl text-white">Dashboard</a>
+                <a href="/dashboard" class="underline underline-offset-1 text-center block text-3xl text-white">{{__('navigate-text.dashboard')}}</a>
                 @else
-                <a href="/login" class="underline underline-offset-1 text-center block text-3xl text-white">Login</a>
+                <a href="/login" class="underline underline-offset-1 text-center block text-3xl text-white">{{__('navigate-text.login')}}</a>
             @endauth
             <br>
-            <a href="/" class="underline underline-offset-1 text-center block text-3xl text-white">Main Page</a>
+            <a href="/" class="underline underline-offset-1 text-center block text-3xl text-white">{{__('navigate-text.home')}}</a>
         </aside>
         <main class="w-full flex justify-center items-center min-h-screen">
             {{$slot}}
