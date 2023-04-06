@@ -17,4 +17,7 @@ return [
 	'dashboard'    => 'Dashboard',
 	'home'         => 'Home Page',
 	'create-movie' => 'Create Movie',
+	'create-quote' => 'Create Quote',
+	'all-quote'    => 'All Quote',
+	'all-movie'    => 'All Movie',
 ];

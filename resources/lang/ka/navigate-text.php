@@ -17,4 +17,7 @@ return [
 	'dashboard'    => 'დეშბორდი',
 	'home'         => 'მთავარი',
 	'create-movie' => 'ფილმის შექმნა',
+	'create-quote' => 'ციტატის შექმნა',
+	'all-quote'    => 'ყველა ციტატა',
+	'all-movie'    => 'ყველა ფილმი',
 ];
