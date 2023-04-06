@@ -1,7 +1,7 @@
 <x-layout>
     @if ($movies)
         <div class="relative overflow-x-auto sm:rounded-lg">
-            <h1 class="text-white text-center text-3xl mb-4">Movies</h1>
+            <h1 class="text-white text-center text-3xl mb-4">{{__('forms.movies')}}</h1>
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 shadow-md ">
                 <tbody>
                     @foreach ($movies as $movie)
@@ -15,11 +15,11 @@
                                 <form action="/movies/movie/{{$movie->slug}}/delete" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>
+                                    <button class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{__('forms.delete')}}</button>
                                 </form>
                             </td>
                             <td class="px-6 py-4">
-                                <a href="/movies/movie/{{$movie->slug}}/edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <a href="/movies/movie/{{$movie->slug}}/edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{__('forms.edit')}}</a>
                             </td>
                         </tr>
                     @endforeach
