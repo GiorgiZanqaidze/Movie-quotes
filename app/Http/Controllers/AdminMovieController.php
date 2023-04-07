@@ -23,7 +23,7 @@ class AdminMovieController extends Controller
 		// Movie::create($validated);
 
 		$movie = new Movie();
-		$movie->slug = request()->slug;
+
 		$movie->setTranslations('title', ['en' => request()->title_en, 'ka' => request()->title_ka]);
 		$movie->save();
 
@@ -50,7 +50,6 @@ class AdminMovieController extends Controller
 		// dd(request()->all());
 
 		// $movie = new Movie();
-		$movie->slug = request()->slug;
 		$movie->setTranslations('title', ['en' => request()->title_en, 'ka' => request()->title_ka]);
 		$movie->update();
 

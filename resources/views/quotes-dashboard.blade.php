@@ -13,14 +13,14 @@
                                 </div>  
                             </th>
                             <td class="px-6 py-4">
-                                <form action="/quotes/quote/{{$quote->slug}}/delete" method="POST">
+                                <form action="/quotes/quote/{{$quote->id}}/delete" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{__('forms.delete')}}</button>
                                 </form>
                             </td>
                             <td class="px-6 py-4">
-                                <a href="/quotes/quote/{{$quote->slug}}/edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{__('forms.edit')}}</a>
+                                <a href="/quotes/quote/{{$quote->id}}/edit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">{{__('forms.edit')}}</a>
                             </td>
                         </tr>
                     @endforeach

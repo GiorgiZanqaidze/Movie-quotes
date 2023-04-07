@@ -20,7 +20,7 @@ class QuoteFactory extends Factory
 		return [
 			'name'        => fake()->text(),
 			'movie_id'    => Movie::factory(),
-			'slug'        => $this->faker->slug(),
+			// 'slug'        => $this->faker->slug(),
 		];
 	}
 }
