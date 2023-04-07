@@ -1,39 +1,29 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\FormRequest\StoreQuoteRequest;
 use App\Models\Movie;
 use App\Models\Quote;
 
-class AdminQuoteController extends Controller
+class QuoteController extends Controller
 {
 	public function create()
 	{
 		return view('create-quote', ['movies' => Movie::all()]);
 	}
 
+	public function index()
+	{
+		$randomQuote = Quote::inRandomOrder()->first();
+		return view('quote', [
+			'quote' => $randomQuote,
+		]);
+	}
+
 	public function store(StoreQuoteRequest $request)
 	{
-		// $attributes = request()->validate([
-		// 	'name_en'           => 'required|min:5|max:255',
-		// 	'movie_id'       => 'required',
-		// 	'slug'           => 'required|min:10|max:255',
-		// 	'thumbnail'      => 'required|image',
-		// ]);
-
-		// $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnail');
-
-		// Quote::create($attributes);
-
-		// dd(request()->all());
-
-		// $quote = new Quote();
-		// $quote->movie_id = request()->movie_id;
-		// $quote->thumbnail = request()->file('thumbnail')->store('thumbnail');
-		// $quote->setTranslations('name', ['en' => request()->name_en, 'ka' => request()->name_ka]);
-		// $quote->save();
-
 		$validated = $request->validated();
 		$quote = Quote::create($validated);
 

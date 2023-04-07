@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\FormRequest\StoreMovieRequest;
 use App\Models\Movie;
 
-class AdminMovieController extends Controller
+class MovieController extends Controller
 {
 	public function index()
 	{
