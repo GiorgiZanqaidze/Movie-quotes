@@ -20,12 +20,12 @@ class AdminMovieController extends Controller
 
 		// dd(request()->title_en);
 
+		// Movie::create($validated);
+
 		$movie = new Movie();
 		$movie->slug = request()->slug;
 		$movie->setTranslations('title', ['en' => request()->title_en, 'ka' => request()->title_ka]);
 		$movie->save();
-
-		// Movie::create($validated);
 
 		return redirect('/');
 	}
