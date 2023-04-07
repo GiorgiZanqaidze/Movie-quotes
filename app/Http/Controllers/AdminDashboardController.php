@@ -12,12 +12,12 @@ class AdminDashboardController extends Controller
 		return view('dashboard');
 	}
 
-	public function showMovies()
+	public function movies()
 	{
 		return view('movies-dashboard', ['movies' => Movie::all()]);
 	}
 
-	public function showQuotes()
+	public function quotes()
 	{
 		return view('quotes-dashboard', ['quotes' => Quote::all()]);
 	}

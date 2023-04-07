@@ -60,17 +60,6 @@ class AdminQuoteController extends Controller
 
 	public function update(Quote $quote, StoreQuoteRequest $request)
 	{
-		// $attributes = request()->validate([
-		// 	'name'           => 'required|min:5|max:255',
-		// 	'movie_id'       => 'required',
-		// 	'slug'           => 'required|min:10|max:255',
-		// 	'thumbnail'      => 'required|image',
-		// ]);
-
-		// $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnail');
-
-		// $quote->update($attributes);
-
 		$quote->setTranslations('name', ['en' => $request->name_en, 'ka' => $request->name_ka]);
 		$quote->thumbnail = $request->file('thumbnail')->store('thumbnail');
 		$quote->movie_id = $request->movie_id;

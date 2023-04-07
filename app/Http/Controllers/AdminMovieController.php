@@ -12,6 +12,13 @@ class AdminMovieController extends Controller
 		return view('create-movie');
 	}
 
+	public function show(Movie $movie)
+	{
+		return view('movie', [
+			'movie' => $movie,
+		]);
+	}
+
 	public function create(StoreMovieRequest $request)
 	{
 		$validated = $request->validated();
