@@ -18,15 +18,16 @@ class AdminMovieController extends Controller
 
 		// dd($request->input('title'));
 
-		// dd(request()->title_en);
-
 		// Movie::create($validated);
+		$validated = $request->validated();
 
 		$movie = new Movie();
 
 		$movie->setTranslations('title', ['en' => request()->title_en, 'ka' => request()->title_ka]);
-		$movie->save();
 
+		dd(request()->title_ka);
+		// Movie::create($validated);
+		$movie->save();
 		return redirect('/');
 	}
 
