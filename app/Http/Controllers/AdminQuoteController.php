@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FormRequest\StoreQuoteRequest;
 use App\Models\Movie;
 use App\Models\Quote;
 
@@ -12,7 +13,7 @@ class AdminQuoteController extends Controller
 		return view('create-quote', ['movies' => Movie::all()]);
 	}
 
-	public function store()
+	public function store(StoreQuoteRequest $request)
 	{
 		// $attributes = request()->validate([
 		// 	'name_en'           => 'required|min:5|max:255',
@@ -27,19 +28,26 @@ class AdminQuoteController extends Controller
 
 		// dd(request()->all());
 
-		$quote = new Quote();
-		$quote->movie_id = request()->movie_id;
-		$quote->thumbnail = request()->file('thumbnail')->store('thumbnail');
-		$quote->setTranslations('name', ['en' => request()->name_en, 'ka' => request()->name_ka]);
-		$quote->save();
+		// $quote = new Quote();
+		// $quote->movie_id = request()->movie_id;
+		// $quote->thumbnail = request()->file('thumbnail')->store('thumbnail');
+		// $quote->setTranslations('name', ['en' => request()->name_en, 'ka' => request()->name_ka]);
+		// $quote->save();
 
+		$validated = $request->validated();
+		$quote = Quote::create($validated);
+
+		$quote->setTranslations('name', ['en' => $request->name_en, 'ka' => $request->name_ka]);
+		$quote->thumbnail = $request->file('thumbnail')->store('thumbnail');
+		$quote->movie_id = $request->movie_id;
+		$quote->save();
 		return redirect('/dashboard');
 	}
 
 	public function destroy(Quote $quote)
 	{
 		$quote->delete();
-		return redirect('/dashboard/movies');
+		return redirect('/dashboard/quotes');
 	}
 
 	public function edit(Quote $quote)
@@ -50,7 +58,7 @@ class AdminQuoteController extends Controller
 		]);
 	}
 
-	public function update(Quote $quote)
+	public function update(Quote $quote, StoreQuoteRequest $request)
 	{
 		// $attributes = request()->validate([
 		// 	'name'           => 'required|min:5|max:255',
@@ -63,12 +71,11 @@ class AdminQuoteController extends Controller
 
 		// $quote->update($attributes);
 
-		$quote->movie_id = request()->movie_id;
-		$quote->thumbnail = request()->file('thumbnail')->store('thumbnail');
-		$quote->setTranslations('name', ['en' => request()->name_en, 'ka' => request()->name_ka]);
-		$quote->save();
+		$quote->setTranslations('name', ['en' => $request->name_en, 'ka' => $request->name_ka]);
+		$quote->thumbnail = $request->file('thumbnail')->store('thumbnail');
+		$quote->movie_id = $request->movie_id;
+		$quote->update();
 
 		return redirect('/dashboard');
-		return redirect('/');
 	}
 }
