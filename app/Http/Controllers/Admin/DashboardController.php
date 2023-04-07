@@ -1,23 +1,24 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Movie;
 use App\Models\Quote;
 
-class AdminDashboardController extends Controller
+class DashboardController extends Controller
 {
 	public function show()
 	{
 		return view('dashboard');
 	}
 
-	public function showMovies()
+	public function movies()
 	{
 		return view('movies-dashboard', ['movies' => Movie::all()]);
 	}
 
-	public function showQuotes()
+	public function quotes()
 	{
 		return view('quotes-dashboard', ['quotes' => Quote::all()]);
 	}

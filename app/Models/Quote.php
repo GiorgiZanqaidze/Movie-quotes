@@ -10,7 +10,7 @@ class Quote extends Model
 {
 	use HasFactory, HasTranslations;
 
-	protected $fillable = ['name', 'movie_id', 'slug', 'thumbnail'];
+	protected $fillable = ['name', 'movie_id', 'thumbnail'];
 
 	public $translatable = ['name'];
 

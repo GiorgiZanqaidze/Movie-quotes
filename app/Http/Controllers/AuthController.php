@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Validation\ValidationException;
 
-class UserController extends Controller
+class AuthController extends Controller
 {
 	public function create()
 	{
 		return view('login');
 	}
 
-	public function store()
+	public function login()
 	{
 		$attributes = request()->validate([
 			'email'    => 'required|email',
@@ -29,7 +29,7 @@ class UserController extends Controller
 		return redirect('/')->with('success', 'Welcome Back!');
 	}
 
-	public function destroy()
+	public function logout()
 	{
 		auth()->logout();
 		return redirect('/');
