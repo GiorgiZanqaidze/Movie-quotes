@@ -11,8 +11,7 @@ return new class extends Migration {
 	public function up(): void
 	{
 		Schema::create('quotes', function (Blueprint $table) {
-			$table->string('name');
-			$table->string('slug');
+			// $table->string('name');
 			$table->string('thumbnail')->nullable();
 			$table->foreignId('movie_id')->constrained()->cascadeOnDelete();
 			$table->id();

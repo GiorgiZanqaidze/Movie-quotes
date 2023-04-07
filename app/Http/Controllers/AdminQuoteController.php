@@ -29,7 +29,6 @@ class AdminQuoteController extends Controller
 
 		$quote = new Quote();
 		$quote->movie_id = request()->movie_id;
-		$quote->slug = request()->slug;
 		$quote->thumbnail = request()->file('thumbnail')->store('thumbnail');
 		$quote->setTranslations('name', ['en' => request()->name_en, 'ka' => request()->name_ka]);
 		$quote->save();
@@ -65,7 +64,6 @@ class AdminQuoteController extends Controller
 		// $quote->update($attributes);
 
 		$quote->movie_id = request()->movie_id;
-		$quote->slug = request()->slug;
 		$quote->thumbnail = request()->file('thumbnail')->store('thumbnail');
 		$quote->setTranslations('name', ['en' => request()->name_en, 'ka' => request()->name_ka]);
 		$quote->save();

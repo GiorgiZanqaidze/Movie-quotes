@@ -11,7 +11,7 @@
                     </div>
                     <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200 text-4xl text-white text-center">"{{$quote->name}}"</p>
                 </div>
-                <a href="/movies/{{$quote->movie->slug}}" class="underline underline-offset-1 text-center block text-3xl text-white">{{$quote->movie->title}}</a>
+                <a href="/movies/{{$quote->movie->id}}" class="underline underline-offset-1 text-center block text-3xl text-white">{{$quote->movie->title}}</a>
             @endif 
         </div>
     </div>
