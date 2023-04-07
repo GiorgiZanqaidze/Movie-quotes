@@ -10,11 +10,8 @@ return new class extends Migration {
 	 */
 	public function up(): void
 	{
-		Schema::create('movies', function (Blueprint $table) {
-			$table->string('slug');
-			// $table->string('title')->nullable();
-			$table->id();
-			$table->timestamps();
+		Schema::table('quote', function (Blueprint $table) {
+			$table->string('name')->nullable();
 		});
 	}
 
@@ -23,6 +20,7 @@ return new class extends Migration {
 	 */
 	public function down(): void
 	{
-		Schema::dropIfExists('movies');
+		Schema::table('quote', function (Blueprint $table) {
+		});
 	}
 };

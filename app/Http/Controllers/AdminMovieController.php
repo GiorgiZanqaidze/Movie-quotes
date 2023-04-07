@@ -14,9 +14,18 @@ class AdminMovieController extends Controller
 
 	public function create(StoreMovieRequest $request)
 	{
-		$validated = $request->validated();
+		// $validated = $request->validated();
 
-		Movie::create($validated);
+		// dd($request->input('title'));
+
+		// dd(request()->title_en);
+
+		// Movie::create($validated);
+
+		$movie = new Movie();
+		$movie->slug = request()->slug;
+		$movie->setTranslations('title', ['en' => request()->title_en, 'ka' => request()->title_ka]);
+		$movie->save();
 
 		return redirect('/');
 	}
@@ -34,9 +43,16 @@ class AdminMovieController extends Controller
 
 	public function update(Movie $movie, StoreMovieRequest $request)
 	{
-		$validated = $request->validated();
+		// $validated = $request->validated();
 
-		$movie->update($validated);
+		// $movie->update($validated);
+
+		// dd(request()->all());
+
+		// $movie = new Movie();
+		$movie->slug = request()->slug;
+		$movie->setTranslations('title', ['en' => request()->title_en, 'ka' => request()->title_ka]);
+		$movie->update();
 
 		return redirect('/');
 	}

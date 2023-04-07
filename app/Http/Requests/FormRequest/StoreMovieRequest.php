@@ -13,9 +13,20 @@ class StoreMovieRequest extends FormRequest
 
 	public function rules()
 	{
-		return [
-			'title'      => 'required|min:3',
-			'slug'       => 'required',
+		$rules = [
+			'title'      => 'min:3|max:255',
+			'slug'       => 'min:10|max:255',
 		];
+
+		foreach (config('app.available_locales') as $locale) {
+			$rules['title_' . $locale] = 'string';
+		}
+
+		// return [
+		// 	'title'      => 'required|min:3|max:255',
+		// 	'slug'       => 'required|min:10|max:255',
+		// ];
+
+		return $rules;
 	}
 }

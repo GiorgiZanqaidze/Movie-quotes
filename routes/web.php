@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\UserController;
 
-Route::get('/', [QuoteController::class, 'index']);
-Route::get('/movies/{movie:slug}', [MovieController::class, 'show']);
+Route::get('/', [QuoteController::class, 'index'])->name('home');
+Route::get('movies/{movie:slug}', [MovieController::class, 'show']);
 
 Route::get('login', [UserController::class, 'create'])->middleware('guest');
 Route::post('login', [UserController::class, 'store'])->middleware('guest');
