@@ -10,4 +10,5 @@ return [
 	'all_quote'       => 'All Quote',
 	'all_movie'       => 'All Movie',
 	'quote_not_found' => 'Quote Not Found',
+	'movie_not_found' => 'Movie Not Found',
 ];

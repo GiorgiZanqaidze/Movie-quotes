@@ -10,4 +10,5 @@ return [
 	'all_quote'       => 'ყველა ციტატა',
 	'all_movie'       => 'ყველა ფილმი',
 	'quote_not_found' => 'ციტატა არ მოიძებნა',
+	'movie_not_found' => 'ფილმი არ მოიძებნა',
 ];
