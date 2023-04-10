@@ -18,5 +18,5 @@ return [
 	'min' => [
 		'string'  => ':attribute ველი ინდა იყოს მინიმუმ :min ასო',
 	],
-	'required' => ':attribute ველი არი სავალდებულო.',
+	'required' => ':attribute ველი არის სავალდებულო.',
 ];

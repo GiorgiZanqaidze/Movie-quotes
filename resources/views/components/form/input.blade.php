@@ -1,7 +1,11 @@
 @props(['name'])
+@props(['placeholder'])
+@props(['label'])
 @props(['value'])
+@props(['type'])
+
 <div class="mb-6">
-    <x-form.label name="slug" text="{{__('forms.movie_slug')}}" />
-    <input placeholder='das-dsds-das-d-as-das-dasd-ad' value="{{$value}}" type="text" id="{{$name}}" name="{{$name}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-    <x-form.error name="slug" />
+    <x-form.label name="{{$name}}" text="{{$label}}" />
+    <input placeholder="{{$placeholder ?? ""}}" value="{{$slot}}" type="{{$type ?? 'text'}}" id="{{$name}}" name="{{$name}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <x-form.error name="{{$name}}" />
 </div>
