@@ -18,9 +18,9 @@ class QuoteFactory extends Factory
 	public function definition(): array
 	{
 		return [
-			'name'        => fake()->text(),
+			'name'        => $this->faker->sentence(),
 			'movie_id'    => Movie::factory(),
-			// 'slug'        => $this->faker->slug(),
+			'thumbnail'   => $this->faker->imageUrl(storage_path('thumbnail')),
 		];
 	}
 }
