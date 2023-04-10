@@ -7,21 +7,21 @@
         @method('PATCH')
         <div>
             <label for="name_en" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{__('forms.quote_name')}} ({{__('forms.en')}})</label>
-            <input placeholder="{{__('placeholders.quote_name')}}" type="text" name="name_en" id="name_en" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <input value="{{ old('name', $quote->name) }}" placeholder="{{__('placeholders.quote_name')}}" type="text" name="name_en" id="name_en" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             @error('name_en')
                 <span class="text-xs text-red-500">{{$message}}</span>
             @enderror
         </div>
             <div>
             <label for="name_ka" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{__('forms.quote_name')}} ({{__('forms.ka')}})</label>
-            <input placeholder="{{__('placeholders.quote_name')}}" type="text" name="name_ka" id="name_ka" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <input value="{{ old('name_ka', $quote->name_ka) }}" placeholder="{{__('placeholders.quote_name')}}" type="text" name="name_ka" id="name_ka" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             @error('name_ka')
                 <span class="text-xs text-red-500">{{$message}}</span>
             @enderror
         </div>
         <div class="mb-6">
             <label for="thumbnail" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{__('forms.quote_image')}}</label>
-            <input type="file" id="thumbnail" name="thumbnail" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <input value="{{ old('name', $quote->thumbnail) }}" type="file" id="thumbnail" name="thumbnail" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             @error('thumbnail')
                 <span class="text-xs text-red-500">{{$message}}</span>
             @enderror
@@ -32,7 +32,7 @@
 
                 @foreach ($movies as $movie)
                     <option 
-                    value="{{$movie->id}}" 
+                    value="{{ old('movie_id', $quote->movie_id) }}"
                     >
                         {{ucwords($movie->title)}}
                     </option>  
