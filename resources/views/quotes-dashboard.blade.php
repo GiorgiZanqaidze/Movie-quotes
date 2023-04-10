@@ -1,8 +1,8 @@
 <x-layout>
     @if ($quotes)
-        <div class="relative overflow-x-auto sm:rounded-lg">
+        <div class="relative sm:rounded-lg max-w-[60%] overflow-wrap mb-5 mt-5">
             <h1 class="text-white text-center text-3xl mb-4">{{__('forms.quotes')}}</h1>
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 shadow-md">
+            <table class="text-sm text-left text-gray-500 dark:text-gray-400 shadow-md">
                 <tbody>
                     @foreach ($quotes as $quote)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">

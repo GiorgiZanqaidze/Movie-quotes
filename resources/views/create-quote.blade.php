@@ -27,7 +27,7 @@
                 </div>
             <div class="mb-6">
                 <label for="movie_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{__('forms.select_movie')}}</label>
-                <select name="movie_id" id="movie_id">
+                <select name="movie_id" id="movie_id" class="max-w-[50%]">
 
                     @foreach ($movies as $movie)
                         <option 
