@@ -9,17 +9,17 @@ use App\Models\Quote;
 
 class QuoteController extends Controller
 {
-	public function create()
-	{
-		return view('create-quote', ['movies' => Movie::all()]);
-	}
-
 	public function index()
 	{
 		$randomQuote = Quote::inRandomOrder()->first();
 		return view('quote', [
 			'quote' => $randomQuote,
 		]);
+	}
+
+	public function create()
+	{
+		return view('create-quote', ['movies' => Movie::all()]);
 	}
 
 	public function store(StoreQuoteRequest $request)
@@ -31,13 +31,13 @@ class QuoteController extends Controller
 		$quote->thumbnail = $request->file('thumbnail')->store('thumbnail');
 		$quote->movie_id = $request->movie_id;
 		$quote->save();
-		return redirect('/dashboard');
+		return redirect()->route('dashboard.quotes');
 	}
 
 	public function destroy(Quote $quote)
 	{
 		$quote->delete();
-		return redirect('/dashboard/quotes');
+		return redirect()->route('dashboard.quotes');
 	}
 
 	public function edit(Quote $quote)
@@ -55,6 +55,6 @@ class QuoteController extends Controller
 		$quote->movie_id = $request->movie_id;
 		$quote->update();
 
-		return redirect('/dashboard');
+		return redirect()->route('dashboard.quotes');
 	}
 }

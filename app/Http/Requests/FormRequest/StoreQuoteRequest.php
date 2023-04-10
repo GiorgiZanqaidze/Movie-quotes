@@ -16,7 +16,6 @@ class StoreQuoteRequest extends FormRequest
 		$rules = [
 			'name_en'           => 'required|min:3|max:255',
 			'name_ka'           => 'required|min:3|max:255',
-			'name_en'           => 'required|min:5|max:255',
 			'movie_id'          => 'required',
 			'thumbnail'         => 'required|image',
 		];

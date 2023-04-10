@@ -30,7 +30,7 @@ class MovieController extends Controller
 
 		$movie->save();
 
-		return redirect('/');
+		return redirect()->route('dashboard.movies');
 	}
 
 	public function edit(Movie $movie)
@@ -41,7 +41,7 @@ class MovieController extends Controller
 	public function destroy(Movie $movie)
 	{
 		$movie->delete();
-		return redirect('/dashboard/movies');
+		return redirect()->route('dashboard.movies');
 	}
 
 	public function update(Movie $movie, StoreMovieRequest $request)
@@ -54,6 +54,6 @@ class MovieController extends Controller
 
 		$movie->update();
 
-		return redirect('/');
+		return redirect()->route('dashboard.movies');
 	}
 }
