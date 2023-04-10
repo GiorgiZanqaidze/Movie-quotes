@@ -19,19 +19,19 @@ Route::controller(DashboardController::class)->group(function () {
 });
 Route::controller(MovieController::class)->group(function () {
 	Route::get('movies/{movie}', [MovieController::class, 'show'])->name('movie.show');
-	Route::get('movies/movie/create', [MovieController::class, 'index'])->middleware('auth')->name('movies.index');
-	Route::post('movies/movie/create', [MovieController::class, 'create'])->middleware('auth')->name('movies.create');
-	Route::delete('movies/movie/{movie}/delete', [MovieController::class, 'destroy'])->middleware('auth')->name('movies.destroy');
-	Route::get('movies/movie/{movie}/edit', [MovieController::class, 'edit'])->middleware('auth')->name('movies.edit');
-	Route::patch('movies/movie/{movie}/edit', [MovieController::class, 'update'])->middleware('auth')->name('movies.update');
+	Route::get('movies/movie/create', [MovieController::class, 'index'])->middleware('auth')->name('movie.index');
+	Route::post('movies/movie/create', [MovieController::class, 'create'])->middleware('auth')->name('movie.create');
+	Route::delete('movies/movie/{movie}/delete', [MovieController::class, 'destroy'])->middleware('auth')->name('movie.destroy');
+	Route::get('movies/movie/{movie}/edit', [MovieController::class, 'edit'])->middleware('auth')->name('movie.edit');
+	Route::patch('movies/movie/{movie}/edit', [MovieController::class, 'update'])->middleware('auth')->name('movie.update');
 });
 Route::controller(QuoteController::class)->group(function () {
 	Route::get('/', [QuoteController::class, 'index'])->name('home');
-	Route::get('quotes/quote/create', [QuoteController::class, 'create'])->middleware('auth')->name('quotes.create');
-	Route::post('quotes/quote/create', [QuoteController::class, 'store'])->middleware('auth')->name('quotes.store');
-	Route::delete('quotes/quote/{quote}/delete', [QuoteController::class, 'destroy'])->middleware('auth')->name('quotes.destroy');
-	Route::get('quotes/quote/{quote}/edit', [QuoteController::class, 'edit'])->middleware('auth')->name('quotes.edit');
-	Route::patch('quotes/quote/{quote}/edit', [QuoteController::class, 'update'])->middleware('auth')->name('quotes.update');
+	Route::get('quotes/quote/create', [QuoteController::class, 'create'])->middleware('auth')->name('quote.create');
+	Route::post('quotes/quote/create', [QuoteController::class, 'store'])->middleware('auth')->name('quote.store');
+	Route::delete('quotes/quote/{quote}/delete', [QuoteController::class, 'destroy'])->middleware('auth')->name('quote.destroy');
+	Route::get('quotes/quote/{quote}/edit', [QuoteController::class, 'edit'])->middleware('auth')->name('quote.edit');
+	Route::patch('quotes/quote/{quote}/edit', [QuoteController::class, 'update'])->middleware('auth')->name('quote.update');
 });
 
 // languages controller
