@@ -1,9 +1,9 @@
 <x-layout>
-    @if ($quotes)
+    @if ($quotes->count())
         <div class="relative sm:rounded-lg max-w-[60%] overflow-wrap mb-5 mt-5">
             <h1 class="text-white text-center text-3xl mb-4">{{__('forms.quotes')}}</h1>
             <table class="text-sm text-left text-gray-500 dark:text-gray-400 shadow-md">
-                <tbody>
+                <tbody class="">
                     @foreach ($quotes as $quote)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
@@ -28,6 +28,6 @@
             </table>
         </div>
         @else
-        <h1 class="text-white">There are no quotes</h1>
+        <h1 class="text-white">{{__('navigate-text.quote_not_found')}}</h1>
     @endif
 </x-layout>

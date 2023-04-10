@@ -12,6 +12,8 @@
                     <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200 text-4xl text-white text-center">"{{$quote->name}}"</p>
                 </div>
                 <a href="/movies/{{$quote->movie->id}}" class="underline underline-offset-1 text-center block text-3xl text-white">{{$quote->movie->title}}</a>
+                @else
+                <h1 class="mb-4 text-base text-neutral-600 dark:text-neutral-200 text-5xl text-white text-center">{{__('navigate-text.quote_not_found')}}</h1>
             @endif 
         </div>
     </div>

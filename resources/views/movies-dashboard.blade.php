@@ -1,5 +1,5 @@
 <x-layout>
-    @if ($movies)
+    @if ($movies->count())
         <div class="relative overflow-x-auto sm:rounded-lg">
             <h1 class="text-white text-center text-3xl mb-4">{{__('forms.movies')}}</h1>
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 shadow-md ">
@@ -27,7 +27,7 @@
             </table>
         </div>
         @else
-        <h1 class="text-white">There are no movie</h1>
+        <h1 class="text-white text-4xl">{{__('navigate-text.movie_not_found')}}</h1>
     @endif
 
 </x-layout>
