@@ -16,6 +16,6 @@ class Quote extends Model
 
 	public function movie()
 	{
-		return $this->belongsTo(Movie::class, 'movie_id');
+		return $this->belongsTo(Movie::class);
 	}
 }
