@@ -34,6 +34,8 @@
                     <button class="underline underline-offset-1 text-center block text-3xl text-white">{{__('navigate-text.logout')}}<button>
                     </form>
                 </div>
+            @endauth
+            <br>
         </aside>
         <main class="w-full flex justify-center min-h-screen">
             {{$slot}}
