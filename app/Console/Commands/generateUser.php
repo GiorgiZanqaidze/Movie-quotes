@@ -12,7 +12,7 @@ class generateUser extends Command
 	 *
 	 * @var string
 	 */
-	protected $signature = 'app:generate-user';
+	protected $signature = 'app:generate-user {name} {email} {password}';
 
 	/**
 	 * The console command description.
@@ -26,10 +26,6 @@ class generateUser extends Command
 	 */
 	public function handle(): void
 	{
-		$user = new User();
-		$user->name = 'gio';
-		$user->email = 'gio@gmail.com';
-		$user->password = bcrypt('gio123');
-		$user->save();
+		User::create(['name' => $this->argument('name'), 'email' =>$this->argument('email'), 'password' =>bcrypt($this->argument('password'))]);
 	}
 }

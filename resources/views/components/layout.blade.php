@@ -27,23 +27,7 @@
                         <a class="hover:bg-white hover:text-black text-black font-bold py-2 px-4 border-white border-2 bg-transparent rounded rounded-full bg-white" href="{{ route('lang.switch', $lang) }}"> {{$language}}</a>
                 @endif
             @endforeach
-            @auth
-                <div>
-                    <form action="/logout" method="POST">
-                    @csrf
-                    <button class="underline underline-offset-1 text-center block text-3xl text-white">{{__('navigate-text.logout')}}<button>
-                    </form>
-                </div>
-                <div>
-                    <a href="/dashboard" class="underline underline-offset-1 text-center block text-3xl text-white">{{__('navigate-text.dashboard')}}</a>
-                </div>
-                @else
-                <div>
-                    <a href="/login" class="underline underline-offset-1 text-center block text-3xl text-white">{{__('navigate-text.login')}}</a>
-                </div>
-            @endauth
             <br>
-            <a href="/" class="underline underline-offset-1 text-center block text-3xl text-white">{{__('navigate-text.home')}}</a>
         </aside>
         <main class="w-full flex justify-center min-h-screen">
             {{$slot}}
