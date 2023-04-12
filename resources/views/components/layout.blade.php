@@ -45,7 +45,7 @@
             <br>
             <a href="/" class="underline underline-offset-1 text-center block text-3xl text-white">{{__('navigate-text.home')}}</a>
         </aside>
-        <main class="w-full flex justify-center items-center min-h-screen">
+        <main class="w-full flex justify-center min-h-screen">
             {{$slot}}
         </main>
     </div>

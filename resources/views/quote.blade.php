@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="flex flex-col w-[50%]">
+    <div class="flex flex-col w-[50%] justify-center">
         <div class="grid gap-4 grid-cols-1">
             @if ($quote)
                 <div class="flex  items-center justify-center flex-col mt-10 mb-10">
