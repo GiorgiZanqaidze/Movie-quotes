@@ -29,7 +29,6 @@ class QuoteController extends Controller
 
 		$quote->setTranslations('name', ['en' => $request->name_en, 'ka' => $request->name_ka]);
 		$quote->thumbnail = $request->file('thumbnail')->store('thumbnail');
-		$quote->movie_id = $request->movie_id;
 		$quote->save();
 		return redirect()->route('dashboard.quotes');
 	}
@@ -52,7 +51,6 @@ class QuoteController extends Controller
 	{
 		$quote->setTranslations('name', ['en' => $request->name_en, 'ka' => $request->name_ka]);
 		$quote->thumbnail = $request->file('thumbnail')->store('thumbnail');
-		$quote->movie_id = $request->movie_id;
 		$quote->update();
 
 		return redirect()->route('dashboard.quotes');
