@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
 Route::controller(AuthController::class)->group(function () {
-	Route::get('login', [AuthController::class, 'create'])->middleware('guest')->name('login.create');
+	Route::get('login', function () { return view('login'); })->middleware('guest')->name('login.page');
 	Route::post('login', [AuthController::class, 'login'])->middleware('guest')->name('login.post');
 	Route::post('logout', [AuthController::class, 'logout'])->middleware('auth')->name('logout.post');
 });
