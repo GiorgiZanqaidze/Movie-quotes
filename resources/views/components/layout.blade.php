@@ -34,16 +34,6 @@
                     <button class="underline underline-offset-1 text-center block text-3xl text-white">{{__('navigate-text.logout')}}<button>
                     </form>
                 </div>
-                <div>
-                    <a href="/dashboard" class="underline underline-offset-1 text-center block text-3xl text-white">{{__('navigate-text.dashboard')}}</a>
-                </div>
-                @else
-                <div>
-                    <a href="/login" class="underline underline-offset-1 text-center block text-3xl text-white">{{__('navigate-text.login')}}</a>
-                </div>
-            @endauth
-            <br>
-            <a href="/" class="underline underline-offset-1 text-center block text-3xl text-white">{{__('navigate-text.home')}}</a>
         </aside>
         <main class="w-full flex justify-center min-h-screen">
             {{$slot}}
