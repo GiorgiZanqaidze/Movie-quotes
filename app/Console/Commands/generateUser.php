@@ -26,13 +26,6 @@ class generateUser extends Command
 	 */
 	public function handle(): void
 	{
-		// $user = new User();
-		// $user->name = $this->argument('name');
-		// $user->email = $this->argument('email');
-		// $user->password = bcrypt($this->argument('password'));
-		// $user->save();
-		// echo $this->argument('name');
-
 		User::create(['name' => $this->argument('name'), 'email' =>$this->argument('email'), 'password' =>bcrypt($this->argument('password'))]);
 	}
 }
