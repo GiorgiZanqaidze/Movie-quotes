@@ -39,4 +39,4 @@ Route::controller(QuoteController::class)->group(function () {
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 
 // !!!!!!!!!!!!!!!
-// Route::get('lang/{lang}', [LanguageController::class, 'switchLang']);
+// Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => LanguageController::class, 'switchLang']);
