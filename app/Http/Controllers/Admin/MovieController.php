@@ -26,7 +26,7 @@ class MovieController extends Controller
 
 		$movie = Movie::create($validated);
 
-		$movie->setTranslations('title', ['en' => request()->title_en, 'ka' => request()->title_ka]);
+		$movie->setTranslations('title', ['en' => $request->title_en, 'ka' => $request->title_ka]);
 
 		$movie->save();
 
@@ -50,7 +50,7 @@ class MovieController extends Controller
 
 		$movie->update($validated);
 
-		$movie->setTranslations('title', ['en' => request()->title_en, 'ka' => request()->title_ka]);
+		$movie->setTranslations('title', ['en' => $request->title_en, 'ka' => $request->title_ka]);
 
 		$movie->update();
 

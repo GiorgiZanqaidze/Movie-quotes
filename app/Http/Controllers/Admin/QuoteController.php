@@ -26,7 +26,6 @@ class QuoteController extends Controller
 	{
 		$validated = $request->validated();
 		$quote = Quote::create($validated);
-
 		$quote->setTranslations('name', ['en' => $request->name_en, 'ka' => $request->name_ka]);
 		$quote->thumbnail = $request->file('thumbnail')->store('thumbnail');
 		$quote->save();
