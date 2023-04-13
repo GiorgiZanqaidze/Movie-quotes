@@ -78,10 +78,6 @@ if you've completed getting started section, then migrating database if fairly s
 php artisan migrate
 ```
 
-#
-### Running Unit tests
-Running unit tests also is very simple process, just type in following command:
-
 ```sh
 composer test
 ```
@@ -100,15 +96,7 @@ when working on JS you may run:
 ```sh
   npm run dev
 ```
-it builds your js files into executable scripts.
-If you want to watch files during development, execute instead:
-
-```sh
-  npm run watch
-```
-it will watch JS files and on change it'll rebuild them, so you don't have to manually build them.
-
-
+it builds your tailwind.js files into executable scripts.
 
 #
 ### Project Structure
@@ -144,4 +132,4 @@ For more information about project standards, take a look at these docs:
 
 [Database Design Diagram]
 
-<a href="https://ibb.co/N2nZVj7"><img src="https://i.ibb.co/N2nZVj7/Movie-quotes-draw-Sql.png" alt="Movie-quotes-draw-Sql"></a>
+<a href="https://ibb.co/N2nZVj7">Draw Sql</a>
