@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\MovieController;
 use App\Http\Controllers\Admin\QuoteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LanguageController;
 
 Route::controller(AuthController::class)->group(function () {
 	Route::get('login', function () { return view('login'); })->middleware('guest')->name('login.page');
@@ -36,3 +37,4 @@ Route::controller(QuoteController::class)->group(function () {
 
 // languages controller
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+// Route::get('lang/{lang}', [LanguageController::class, 'switchLang']);
